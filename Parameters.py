@@ -9,3 +9,4 @@ model_name = 'CUAL' # name of the model to choose from the CUAL folder
 resolve = False  # if gap reached in max_solve time is lower than defined min_gap then split band into half
 ISC_path = 'Transportation Lane Products Results.csv' # path for the download directory
 test_git = 'git'
+test_git2 = 'git2'

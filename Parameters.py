@@ -10,3 +10,4 @@ resolve = False  # if gap reached in max_solve time is lower than defined min_ga
 ISC_path = 'Transportation Lane Products Results.csv' # path for the download directory
 test_git = 'git'
 test_git2 = 'git2'
+test_git3 = 'git3'

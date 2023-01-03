@@ -8,7 +8,8 @@ from SQL_Run_Proc import *
 import time
 from datetime import datetime
 import os
-from Parameters import bands, cuts, max_solve, min_gap, scenario_name, model_name, resolve, ISC_path
+from Parameters import bands, cuts, max_solve, min_gap, scenario_name, model_name, resolve, ISC_path, fico_results_archive
+import openingZippedFile
 
 start_time = time.time()
 transform_all()
@@ -316,6 +317,7 @@ select_right_panel('Results Export')
 time.sleep(5)
 
 # here can be added code to check if the AllCSVExports.zip file exists in the download folder
+openingZippedFile.check_if_file_exist(delete_zip=True)
 click_button('DOWNLOAD RESULTS')
 
 for k, band in enumerate(bands):
@@ -406,6 +408,9 @@ for k, band in enumerate(bands):
         driver.refresh()
         unclick_messages()
         select_right_panel('Results Export')
+        if openingZippedFile.check_if_file_exist():
+            openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
+                                                         & f"AllCSVExports_{scenario_name}_{bands(k-1)}.zip"))
         time.sleep(5)
         click_button('DOWNLOAD RESULTS')
 

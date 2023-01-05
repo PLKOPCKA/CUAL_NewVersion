@@ -408,7 +408,7 @@ for k, band in enumerate(bands):
         driver.refresh()
         unclick_messages()
         select_right_panel('Results Export')
-        if openingZippedFile.check_if_file_exist():
+        if openingZippedFile.check_if_file_exist(delete_zip=False):
             openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
                                                          & f"AllCSVExports_{scenario_name}_{bands(k-1)}.zip"))
         time.sleep(5)

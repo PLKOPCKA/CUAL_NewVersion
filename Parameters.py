@@ -10,7 +10,7 @@ scenario_name = 'Test_SS_KEG' # name of the Scenario outputs in the Database Tab
 model_name = 'CUAL' # name of the model to choose from the CUAL folder
 resolve = False  # if gap reached in max_solve time is lower than defined min_gap then split band into half
 ISC_path = 'Transportation Lane Products Results.csv' # path for the download directory
-fico_results_archive = r"E:\06.SCG Models\Poland_Customer_Allocation\FICO_results_archive\\"
+fico_results_archive = r"E:\06.SCG Models\Poland_Customer_Allocation\FICO_results_archive"
 
 if __name__ == '__main__':
-    print(win_user)
+    print(fico_results_archive)

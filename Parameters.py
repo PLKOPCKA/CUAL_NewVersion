@@ -13,4 +13,5 @@ ISC_path = 'Transportation Lane Products Results.csv' # path for the download di
 fico_results_archive = r"E:\06.SCG Models\Poland_Customer_Allocation\FICO_results_archive"
 
 if __name__ == '__main__':
+    print(win_user)
     print(fico_results_archive)

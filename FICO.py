@@ -328,9 +328,9 @@ time.sleep(5)
 # here can be added code to check if the AllCSVExports.zip file exists in the download folder
 openingZippedFile.check_if_file_exist(delete_zip=True)
 click_button('DOWNLOAD RESULTS')
-if openingZippedFile.check_if_file_exist(delete_zip=False):
-    openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
-                                                                & rf"\AllCSVExports_{scenario_name}_FirstRun.zip"))
+# if openingZippedFile.check_if_file_exist(delete_zip=False):
+#     openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
+#                                                                 + rf"\AllCSVExports_{scenario_name}_FirstRun.zip"))
 
 for k, band in enumerate(bands):
     time.sleep(60)
@@ -421,12 +421,20 @@ for k, band in enumerate(bands):
         unclick_messages()
         select_right_panel('Results Export')
         time.sleep(5)
-        openingZippedFile.check_if_file_exist(delete_zip=True)
-        click_button('DOWNLOAD RESULTS')
+        # openingZippedFile.check_if_file_exist(delete_zip=True)
+        i = 0
+        if k == 0:
+            i = 'first_run'
+        else:
+            i = bands[k-1]
         if openingZippedFile.check_if_file_exist(delete_zip=False):
             openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
-                                                         & rf"\AllCSVExports_{scenario_name}_{bands(k-1)}.zip"))
+                                                         + rf"\AllCSVExports_{scenario_name}_{i}.zip"))
+        click_button('DOWNLOAD RESULTS')
 
+if openingZippedFile.check_if_file_exist(delete_zip=False):
+    openingZippedFile.move_file_to_new_directory(new_directory=(fico_results_archive
+                                                 + rf"\AllCSVExports_{scenario_name}_Final.zip"))
 
 print("------------------------------------------------------------------")
 print("--- %s seconds ---" % (time.time() - start_time))

@@ -2,6 +2,7 @@ import zipfile
 import os
 from pandas import read_csv, DataFrame
 from Parameters import win_user
+import shutil
 
 
 def open_zippedCSV_as_DataFrame(csv_name: str, zip_name=f'C:/Users/{win_user}/Downloads/AllCSVExports.zip',
@@ -45,7 +46,8 @@ def check_if_file_exist(zip_name=f'C:/Users/{win_user}/Downloads/AllCSVExports.z
 
 
 def move_file_to_new_directory(new_directory: str, zip_name=f'C:/Users/{win_user}/Downloads/AllCSVExports.zip'):
-    os.replace(zip_name, new_directory)
+    # os.replace(zip_name, new_directory)
+    shutil.move(zip_name, new_directory)
 
 
 if __name__ == '__main__':

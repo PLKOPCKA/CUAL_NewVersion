@@ -15,7 +15,7 @@ def execute_sql_proc(cut, band, iteration, ISC_path, lanes=True):
     # latest_file = latest_file.replace('\\', '/')
 
     if lanes:
-        lane_products = open_zippedCSV_as_DataFrame(ISC_path)
+        lane_products = open_zippedCSV_as_DataFrame(ISC_path, delete_zip=False)
         lane_products.columns = lane_products.columns.str.replace(' ', '_')
 
     conn = pyodbc.connect('Driver={SQL Server Native Client 11.0};'

@@ -11,7 +11,7 @@ import time
 from datetime import datetime
 # import os
 from Parameters import bands, cuts, max_solve, min_gap, scenario_name, \
-    model_name, resolve, ISC_path, fico_results_archive
+    model_name, resolve, ISC_path, fico_results_archive, win_user, fico_cual_folder
 # import openingZippedFile
 
 options = Options()
@@ -97,6 +97,7 @@ def go_to_job(operation, max_wait=3600, check=5, get_time=False):
                 model = ''
                 process = ''
                 status = ''
+                exec_time = 'timer error'
                 for col in row.find_elements(By.TAG_NAME, 'td'):
                     j += 1
                     if j == 2: model = col.text

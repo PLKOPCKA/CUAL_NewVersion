@@ -24,7 +24,8 @@ transform_all()
 # options.binary_location = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 # driver = Edge(executable_path=r"E:\00_SQL Queries\Kamil\msedgedriver.exe", options=options)
 
-driver.get('http://scs-prd-as02:8860/insight/login.jsp')
+# driver.get('http://scs-prd-as02:8860/insight/login.jsp')
+driver.get('https://scs-prd-as02.global.internal.carlsberggroup.com/insight/login.jsp')
 driver.maximize_window()
 
 try:
